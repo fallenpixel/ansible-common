@@ -11,7 +11,7 @@ defaults:
     working-directory: 'fallenpixel.common'
 
 env:
-  ANSBILE_ROLE_PATH: $GITHUB_WORKSPACE
+  ANSBILE_ROLES_PATH: $GITHUB_WORKSPACE
 
 jobs:
 
