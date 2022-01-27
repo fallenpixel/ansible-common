@@ -3,12 +3,12 @@
   ansible.builtin.package:
     name: "*"
     state: latest
-    update_cache: yes
+    update_cache: true
   become: true
   when: naughty_mode is true and ansible_os_family != 'Archlinux'
 - name: Update all packages (archlinux)
   community.general.pacman:
-    update_cache: yes
-    upgrade: yes
+    update_cache: true
+    upgrade: true
   become: true
   when: naughty_mode is true and ansible_os_family == 'Archlinux'

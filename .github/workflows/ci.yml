@@ -10,7 +10,7 @@ defaults:
   run:
     working-directory: 'fallenpixel.common'
 
-env: 
+env:
   ANSBILE_ROLE_PATH: /work
 
 jobs:
