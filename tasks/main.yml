@@ -1,9 +1,14 @@
 ---
-- name: Update all packages
+- name: Update all packages (debian and rhel)
   ansible.builtin.package:
+    name: "*"
     state: latest
-    update_cache: true
+    update_cache: yes
   become: true
-  when: naughty_mode is true
-  tags:
-    - debug
+  when: naughty_mode is true and ansible_os_family != 'Archlinux'
+- name: Update all packages (archlinux)
+  community.general.pacman:
+    update_cache: yes
+    upgrade: yes
+  become: true
+  when: naughty_mode is true and ansible_os_family == 'Archlinux'
