@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: common
   remote_user: root
   roles:
     - fallenpixel.common
