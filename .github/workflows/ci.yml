@@ -10,6 +10,9 @@ defaults:
   run:
     working-directory: 'fallenpixel.common'
 
+env: 
+  ANSBILE_ROLE_PATH: /work
+
 jobs:
 
   lint:
