@@ -50,4 +50,5 @@ jobs:
           python-version: '3.x'
       - name: Run Test
         run: |
+          ansible-galaxy install -r requirements.yml
           ansible-playbook tests/test.yml -i tests/inventory --syntax-check
