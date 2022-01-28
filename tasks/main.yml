@@ -4,11 +4,15 @@
     name: "*"
     state: latest
     update_cache: true
+  register: package_out
   become: true
   when: naughty_mode is true and ansible_os_family != 'Archlinux'
+  notify: Print Packages
 - name: Update all packages (archlinux)
   community.general.pacman:
     update_cache: true
     upgrade: true
+  register: package_out
   become: true
   when: naughty_mode is true and ansible_os_family == 'Archlinux'
+  notify: Print Packages

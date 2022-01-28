@@ -1,2 +1,4 @@
 ---
-# handlers file for common
+- name: Print Packages
+  debug:
+    var: package_out.packages
