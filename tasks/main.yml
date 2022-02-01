@@ -1,4 +1,10 @@
 ---
+- name: Install Kitty terminfo
+  ansible.builtin.package:
+    name: kitty-terminfo
+    state: latest
+    update_cache: true
+  become: true
 - name: Update all packages (debian and rhel)
   ansible.builtin.package:
     name: "*"
